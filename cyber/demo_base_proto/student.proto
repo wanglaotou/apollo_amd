@@ -1,0 +1,14 @@
+// 使用的proto版本
+syntax = "proto2";
+// 包声明
+package apollo.cyber.demo_base_proto;
+//消息声明
+// 关键字 message 相当于 class
+message Student {
+    // 字段 --- 名字/年龄/身高，书籍
+    // 字段格式 --- 字段规则/数据类型/字段名/编号
+    required string name =1;
+    optional uint64 age = 2;
+    optional double height = 3;
+    repeated string books = 4;
+}
