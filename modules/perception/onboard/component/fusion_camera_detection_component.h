@@ -45,6 +45,7 @@ typedef std::shared_ptr<apollo::perception::Motion_Service>
 using apollo::common::EigenMap;
 using apollo::common::EigenVector;
 
+// Init -> InitConfig -> InitAlgorithmPlugin -> InitCameraFrames -> InitCameraListeners -> OnReceiveImage
 namespace apollo {
 namespace perception {
 namespace onboard {

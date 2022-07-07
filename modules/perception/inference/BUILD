@@ -52,6 +52,8 @@ cc_library(
         "//modules/perception/inference/libtorch:torch_net",
         "//modules/perception/inference/onnx:libtorch_obstacle_detector",
         "//modules/perception/inference/tensorrt:rt_net",
+        "//modules/perception/inference/tensorrt_test:rt_net",
+        "//modules/perception/inference/yolox:yolox",
         "//modules/perception/inference/utils:inference_util_lib",
     ],
 )

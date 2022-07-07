@@ -63,6 +63,25 @@ py_proto_library(
 )
 
 cc_proto_library(
+    name = "fusion_camera_yolox_detection_component_cc_proto",
+    deps = [
+        ":fusion_camera_yolox_detection_component_proto",
+    ],
+)
+
+proto_library(
+    name = "fusion_camera_yolox_detection_component_proto",
+    srcs = ["fusion_camera_yolox_detection_component.proto"],
+)
+
+py_proto_library(
+    name = "fusion_camera_yolox_detection_component_py_pb2",
+    deps = [
+        ":fusion_camera_yolox_detection_component_proto",
+    ],
+)
+
+cc_proto_library(
     name = "lane_perception_component_cc_proto",
     deps = [
         ":lane_perception_component_proto",

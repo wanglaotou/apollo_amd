@@ -1,0 +1,11 @@
+module_config {
+  module_library : "/apollo/bazel-bin/modules/perception/onboard/component/libperception_component_camera_yolox.so"
+  components {
+    class_name : "FusionCameraYoloxDetectionComponent"
+    config {
+      name: "FusionCameraYoloxComponent"
+      config_file_path: "/apollo/modules/perception/production/conf/perception/camera/fusion_camera_yolox_detection_component.pb.txt"
+      flag_file_path: "/apollo/modules/perception/production/conf/perception/perception_common.flag"
+    }
+  }
+}

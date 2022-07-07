@@ -267,8 +267,9 @@ bool FusionCameraDetectionComponent::Init() {
 }
 
 void FusionCameraDetectionComponent::OnReceiveImage(
-    const std::shared_ptr<apollo::drivers::Image> &message,
+    const std::shared_ptr<apollo::drivers::Image> &message,     //根据camera驱动指定的apollo Image图像结构体传入图像数据，结构体为apollo::drivers::Image
     const std::string &camera_name) {
+      // 
   std::lock_guard<std::mutex> lock(mutex_);
   const double msg_timestamp = message->measurement_time() + timestamp_offset_;
   AINFO << "Enter FusionCameraDetectionComponent::Proc(), "
@@ -736,7 +737,7 @@ int FusionCameraDetectionComponent::InternalProc(
         << camera_frame.calibration_service->QueryPitchAngle()
         << " | camera_grond_height "
         << camera_frame.calibration_service->QueryCameraToGroundHeight();
-  prefused_message->frame_->objects = camera_frame.tracked_objects;
+  prefused_message->frame_->objects = camera_frame.tracked_objects; //perception感知得到的结果
   // TODO(gaohan02, wanji): check the boxes with 0-width in perception-camera
   prefused_message->frame_->objects.clear();
   for (auto obj : camera_frame.tracked_objects) {

@@ -13,6 +13,15 @@ cc_library(
 )
 
 cc_library(
+    name = "camera_frame_yolox",
+    hdrs = ["camera_frame_yolox.h"],
+    deps = [
+        ":data_provider",
+        "//modules/perception/base",
+    ],
+)
+
+cc_library(
     name = "camera_ground_plane",
     srcs = ["camera_ground_plane.cc"],
     hdrs = ["camera_ground_plane.h"],
@@ -107,6 +116,7 @@ cc_library(
     name = "common",
     deps = [
         ":camera_frame",
+        ":camera_frame_yolox",
         ":camera_ground_plane",
         ":data_provider",
         ":global_config",

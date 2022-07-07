@@ -24,6 +24,10 @@
 #include "modules/perception/base/traffic_light.h"
 #include "modules/perception/camera/common/data_provider.h"
 
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/imgproc/types_c.h>
+
 namespace apollo {
 namespace perception {
 namespace camera {
@@ -37,6 +41,8 @@ struct CameraFrame {
   int frame_id = 0;
   // data provider
   DataProvider *data_provider = nullptr;
+  std::string encoding;    //!< Image encoding ("mono8", "bgr8", etc.)
+  cv::Mat image;           //!< Image data for use with OpenCV
   // calibration service
   BaseCalibrationService *calibration_service = nullptr;
   // hdmap struct

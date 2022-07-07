@@ -8,6 +8,7 @@ import "modules/common/proto/header.proto";
 import "modules/common/proto/pnc_point.proto";
 import "modules/map/proto/map_lane.proto";
 
+// 2d感知结果bbox
 message BBox2D {
   optional double xmin = 1;  // in pixels.
   optional double ymin = 2;  // in pixels.
